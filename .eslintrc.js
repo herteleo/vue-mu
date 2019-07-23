@@ -4,6 +4,10 @@ module.exports = {
     node: true,
   },
   extends: [
+    'plugin:vue/recommended',
     'airbnb',
   ],
+  parserOptions: {
+    parser: 'babel-eslint',
+  },
 };
