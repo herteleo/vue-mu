@@ -1,7 +1,5 @@
-'use strict';
+function vueMu() {
+  // TODO
+}
 
 module.exports = vueMu;
-
-function vueMu() {
-    // TODO
-}
