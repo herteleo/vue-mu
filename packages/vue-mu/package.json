@@ -20,6 +20,5 @@
     "lib"
   ],
   "scripts": {
-    "release": "lerna version --conventional-commits --create-release github --yes"
   }
 }

@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "lint": "eslint --fix ./**/*.{js,html,vue}"
+    "lint": "eslint --fix ./**/*.{js,html,vue}",
+    "release": "lerna version --conventional-commits --create-release github --yes"
   },
   "husky": {
     "hooks": {
