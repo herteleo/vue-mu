@@ -20,5 +20,11 @@
     "lib"
   ],
   "scripts": {
+    "build": "rollup --config",
+    "serve": "rollup --config --watch"
+  },
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "rollup-plugin-buble": "^0.19.8"
   }
 }
