@@ -1,4 +1,6 @@
-import buble from 'rollup-plugin-buble';
+import babel from 'rollup-plugin-babel';
+import common from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
 import { version } from './package.json';
 
 const yearNow = new Date().getFullYear();
@@ -13,29 +15,43 @@ const banner = `/*!
  */
 `;
 
-export default {
-  input: 'lib/vue-mu.js',
-  plugins: [
-    buble(),
-  ],
-  output: [
-    {
+export default [
+  {
+    input: 'lib/vue-mu.js',
+    output: {
       file: 'dist/vue-mu.common.js',
       format: 'cjs',
       name: 'VueMu',
       banner,
     },
-    {
+    plugins: [
+      babel(),
+    ],
+  },
+  {
+    input: 'lib/vue-mu.js',
+    output: {
       file: 'dist/vue-mu.esm.js',
       format: 'es',
       name: 'VueMu',
       banner,
     },
-    {
+    plugins: [
+      babel(),
+    ],
+  },
+  {
+    input: 'lib/vue-mu.js',
+    output: {
       file: 'dist/vue-mu.min.js',
       format: 'umd',
       name: 'VueMu',
       banner,
     },
-  ],
-};
+    plugins: [
+      resolve(),
+      common(),
+      babel(),
+    ],
+  },
+];
