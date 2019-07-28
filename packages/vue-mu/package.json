@@ -12,23 +12,26 @@
     "url": "https://github.com/herteleo/vue-mu/issues"
   },
   "license": "MIT",
-  "main": "lib/vue-mu.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "dist/vue-mu.common.js",
+  "module": "dist/vue-mu.esm.js",
+  "unpkg": "dist/vue-mu.umd.min.js",
+  "jsdelivr": "dist/vue-mu.umd.min.js",
   "files": [
-    "lib"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "rollup --config",
     "serve": "rollup --config --watch"
   },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "rollup": "^1.17.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^5.2.0"
+  "dependencies": {
+    "auto-parse": "^1.8.0",
+    "camelcase": "^5.3.1",
+    "lodash.clonedeep": "^4.5.0",
+    "parent-module": "^2.0.0",
+    "read-pkg-up": "^6.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^2"
   }
 }
