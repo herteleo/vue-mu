@@ -11,11 +11,12 @@ jobs:
     docker:
       - image: circleci/node:12
     steps:
-      - checkout
       - run: |
+          mkdir -p /home/circleci/project
+          cd /home/circleci/project
+          git clone "https://github.com/herteleo/vue-mu.git" .
           git config user.email "leonard.hertel@gmail.com"
           git config user.name "herteleo"
-          git remote add upstream https://github.com/herteleo/vue-mu.git
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm ci
       - run: npm run release
