@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herteleo/vue-mu.git"
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
