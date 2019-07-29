@@ -40,7 +40,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "examples": "file:packages\\examples",
     "vue-mu": "file:packages\\vue-mu"
   }
 }
