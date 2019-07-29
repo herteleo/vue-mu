@@ -12,6 +12,9 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
+      - run: |
+          git config user.email "leonard.hertel@gmail.com"
+          git config user.name "herteleo"
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm ci
       - run: npm run release
