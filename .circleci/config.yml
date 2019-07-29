@@ -15,6 +15,7 @@ jobs:
       - run: |
           git config user.email "leonard.hertel@gmail.com"
           git config user.name "herteleo"
+          git remote add upstream https://github.com/herteleo/vue-mu.git
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm ci
       - run: npm run release

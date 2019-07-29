@@ -8,7 +8,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
-    "release": "lerna version --conventional-commits --git-remote https://github.com/herteleo/vue-mu.git --create-release github --yes && lerna publish",
+    "release": "lerna version --conventional-commits --git-remote upstream --create-release github --yes && lerna publish",
     "serve": "lerna run --parallel serve",
     "postinstall": "npm run bootstrap"
   },
