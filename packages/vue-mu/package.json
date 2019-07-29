@@ -1,6 +1,6 @@
 {
   "name": "vue-mu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manage multiple Vue.js instances",
   "author": "herteleo <leonard.hertel@gmail.com>",
   "homepage": "https://github.com/herteleo/vue-mu/tree/master/packages/vue-mu/",
