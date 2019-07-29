@@ -14,7 +14,7 @@ jobs:
       - run: |
           mkdir -p /home/circleci/project
           cd /home/circleci/project
-          git clone "https://github.com/herteleo/vue-mu.git" .
+          git clone "https://$GH_TOKEN@github.com/herteleo/vue-mu.git" .
           git config user.email "leonard.hertel@gmail.com"
           git config user.name "herteleo"
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
