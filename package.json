@@ -4,7 +4,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
-    "release": "lerna version --conventional-commits --create-release github --yes",
+    "release": "lerna version --conventional-commits --create-release github --yes && lerna publish",
     "serve": "lerna run --parallel serve",
     "postinstall": "npm run bootstrap"
   },
