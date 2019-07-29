@@ -12,6 +12,7 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm ci
       - run: npm run release
 
