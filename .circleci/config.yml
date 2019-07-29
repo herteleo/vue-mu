@@ -13,7 +13,6 @@ jobs:
     steps:
       - checkout
       - run: |
-          git config --global url."https://$GH_TOKEN@github.com".insteadOf "ssh://git@github.com"
           git config user.email "leonard.hertel@gmail.com"
           git config user.name "herteleo"
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
