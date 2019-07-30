@@ -1,13 +1,6 @@
 {
   "name": "root",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/herteleo/vue-mu.git"
-  },
-  "bugs": {
-    "url": "https://github.com/herteleo/vue-mu/issues"
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
@@ -20,6 +13,9 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "npm run lint"
     }
+  },
+  "dependencies": {
+    "vue-mu": "file:packages\\vue-mu"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -45,8 +41,5 @@
     "rollup-plugin-uglify": "^6.0.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
-  },
-  "dependencies": {
-    "vue-mu": "file:packages\\vue-mu"
   }
 }
