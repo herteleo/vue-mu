@@ -10,6 +10,7 @@ import VueMuConfigPlugin from './utils/configPlugin';
 let defaults = {
   el: undefined,
   ident: 'vue-mu',
+  observe: false,
   silent: __SILENT__,
   strict: false,
   config: {},
@@ -54,6 +55,10 @@ export default class VueMu {
     }
 
     this.init();
+
+    if (this.options.observe) {
+      this.observe();
+    }
   }
 
   init(selector = document) {
@@ -63,6 +68,37 @@ export default class VueMu {
     if (!elements.length) return;
 
     elements.forEach(el => this.createInstance(el));
+  }
+
+  observer(selector) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(m => this.init(m.target));
+    });
+
+    observer.observe(selector, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  observe() {
+    const { observe } = this.options;
+    const El = Element.prototype;
+    const List = NodeList.prototype;
+
+    if (typeof observe === 'boolean' && observe) {
+      return this.observer(document.body);
+    }
+
+    if (El.isPrototypeOf.call(El, observe)) {
+      return this.observer(observe);
+    }
+
+    if (List.isPrototypeOf.call(List, observe)) {
+      return Array.from(observe).forEach(s => this.observer(s));
+    }
+
+    return false;
   }
 
   createConfigForInstance(el) {

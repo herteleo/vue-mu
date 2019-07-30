@@ -181,13 +181,14 @@ Results in:
 
 ## Options
 
-| Format  | Required | Property   | Default value | Description
-|---------|----------|------------|---------------|------------
-| String  | `true`   | `el`       | `undefined`   | Identifier for the Vue.js app instances
-| String  | `false`  | `ident`    | `'vue-mu'`    | Data attribute identifier `data-vue-mu-*`. Change this eg. to `app` if you want to access `vue-mu` by `data-app-*`.
-| Boolean | `false`  | `silent`   | `false` *     | If set to `false` `vue-mu` throws errors on misconfiguration (*: defaults `true` in minified browser/umd version)
-| Boolean | `false`  | `strict`   | `false`       | Only accept `data-vue-mu-config-*` properties defined in `config` option
-| Object  | `false`  | `config`   | `{}`          | Use this to define a default configuration for instances, overwritable by `data` properties.
+| Format             | Required | Property   | Default value | Description
+|--------------------|----------|------------|---------------|------------
+| String             | `true`   | `el`       | `undefined`   | Identifier for the Vue.js app instances
+| String             | `false`  | `ident`    | `'vue-mu'`    | Data attribute identifier `data-vue-mu-*`. Change this eg. to `app` if you want to access `vue-mu` by `data-app-*`.
+| Boolean / Selector | `false`  | `observe`  | `false`       | Observe DOM changes and initialize app instances dynamically. `true` observes the whole document `<body>`, `document.querySelector('.foo')` or `document.querySelectorAll('.bar')` observes only changes in these elements. Selector elements must be present before `vue-mu` gets loaded.
+| Boolean            | `false`  | `silent`   | `false` *     | If set to `false` `vue-mu` throws errors on misconfiguration (*: defaults `true` in minified browser/umd version)
+| Boolean            | `false`  | `strict`   | `false`       | Only accept `data-vue-mu-config-*` properties defined in `config` option
+| Object             | `false`  | `config`   | `{}`          | Use this to define a default configuration for instances, overwritable by `data` properties.
 
 Example configuration:
 
