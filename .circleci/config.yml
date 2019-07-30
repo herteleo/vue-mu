@@ -19,8 +19,9 @@ jobs:
           git config user.name "herteleo"
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run: npm ci
-      - run: npx lerna run --scope vue-mu build
       - run: npm run release
+      - run: npm run build
+      - run: npm run publish
 
 workflows:
   version: 2

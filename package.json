@@ -3,8 +3,10 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build": "lerna run --scope vue-mu build",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
-    "release": "lerna version --conventional-commits --create-release github --yes && lerna publish from-git --yes",
+    "publish": "lerna publish from-git --yes",
+    "release": "lerna version --conventional-commits --create-release github --yes",
     "serve": "lerna run --parallel serve",
     "postinstall": "npm run bootstrap"
   },
