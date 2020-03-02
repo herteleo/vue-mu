@@ -26,7 +26,7 @@ const banner = `/*!
 
 const babelConfig = {
   babelrc: false,
-  exclude: 'node_modules/**',
+  // exclude: 'node_modules/**',
   presets: [
     [
       '@babel/env',

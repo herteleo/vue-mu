@@ -1,14 +1,29 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "vue-mu",
+  "version": "0.0.0-development",
+  "description": "Manage multiple Vue.js instances",
+  "author": "herteleo <leonard.hertel@gmail.com>",
+  "homepage": "https://github.com/herteleo/vue-mu/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herteleo/vue-mu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/herteleo/vue-mu/issues"
+  },
+  "license": "MIT",
+  "main": "dist/vue-mu.common.js",
+  "module": "dist/vue-mu.esm.js",
+  "unpkg": "dist/vue-mu.umd.min.js",
+  "jsdelivr": "dist/vue-mu.umd.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna run --scope vue-mu build",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
-    "publish": "lerna publish from-git --yes",
-    "release": "lerna version --conventional-commits --create-release github --yes",
-    "serve": "lerna run --parallel serve",
-    "postinstall": "npm run bootstrap"
+    "build": "rollup --config",
+    "serve": "rollup --config --watch"
   },
   "husky": {
     "hooks": {
@@ -17,7 +32,9 @@
     }
   },
   "dependencies": {
-    "vue-mu": "file:packages\\vue-mu"
+    "auto-parse": "^1.8.0",
+    "camelcase": "^5.3.1",
+    "lodash.clonedeep": "^4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -34,7 +51,6 @@
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^3.0.1",
-    "lerna": "^3.16.3",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
@@ -43,5 +59,8 @@
     "rollup-plugin-uglify": "^6.0.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
+  },
+  "peerDependencies": {
+    "vue": "^2"
   }
 }
