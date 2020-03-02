@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Manage multiple Vue.js instances",
   "author": "Leonard Hertel <leonard.hertel@gmail.com>",
-  "homepage": "https://github.com/herteleo/vue-mu/",
+  "homepage": "https://github.com/herteleo/vue-mu#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/herteleo/vue-mu.git"
