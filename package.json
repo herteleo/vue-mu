@@ -23,8 +23,8 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
-    "build": "rollup --config",
-    "serve": "rollup --config --watch"
+    "build": "rollup --config .rolluprc.js",
+    "serve": "rollup --config .rolluprc.js --watch"
   },
   "husky": {
     "hooks": {
