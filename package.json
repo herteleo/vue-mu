@@ -21,6 +21,7 @@
     "src"
   ],
   "scripts": {
+    "prepublishOnly": "npm run build",
     "lint": "eslint --fix ./**/*.{js,html,vue}",
     "build": "rollup --config",
     "serve": "rollup --config --watch"
@@ -41,6 +42,7 @@
     "@babel/preset-env": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@semantic-release/git": "^9.0.0",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "babel-eslint": "^10.0.2",
@@ -57,6 +59,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-uglify": "^6.0.2",
+    "semantic-release": "^17.0.4",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
