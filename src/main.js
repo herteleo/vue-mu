@@ -1,7 +1,7 @@
 /* global __VERSION__, __SILENT__ */
 
 import autoParse from 'auto-parse';
-import camelCase from 'camelcase';
+import { camelCase } from 'camel-case';
 import Vue from 'vue';
 
 import createNewVue from './utils/createNewVue';
@@ -67,12 +67,12 @@ export default class VueMu {
 
     if (!elements.length) return;
 
-    elements.forEach(el => this.createInstance(el));
+    elements.forEach((el) => this.createInstance(el));
   }
 
   observer(selector) {
     const observer = new MutationObserver((mutations) => {
-      mutations.forEach(m => this.init(m.target));
+      mutations.forEach((m) => this.init(m.target));
     });
 
     observer.observe(selector, {
@@ -95,7 +95,7 @@ export default class VueMu {
     }
 
     if (List.isPrototypeOf.call(List, observe)) {
-      return Array.from(observe).forEach(s => this.observer(s));
+      return Array.from(observe).forEach((s) => this.observer(s));
     }
 
     return false;

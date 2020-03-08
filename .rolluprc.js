@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import babel from 'rollup-plugin-babel';
-import common from 'rollup-plugin-commonjs';
-import replacePlugin from 'rollup-plugin-replace';
-import resolve from 'rollup-plugin-node-resolve';
+import babelPlugin from 'rollup-plugin-babel';
+import common from '@rollup/plugin-commonjs';
+import replacePlugin from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
 import { uglify } from 'rollup-plugin-uglify';
 
 import {
@@ -24,19 +24,21 @@ const banner = `/*!
  */
 `;
 
-const babelConfig = {
+const babel = () => babelPlugin({
   babelrc: false,
-  // exclude: 'node_modules/**',
+  exclude: [/\/core-js\//],
+  externalHelpers: true,
   presets: [
     [
       '@babel/env',
       {
-        modules: false,
-        targets: '> 1%, last 2 versions, not ie <= 8',
+        corejs: 3,
+        targets: '> 1% and last 2 versions, not ie <= 10',
+        useBuiltIns: 'usage',
       },
     ],
   ],
-};
+});
 
 const replace = ({ silent = false } = {}) => replacePlugin({
   __VERSION__: JSON.stringify(version),
@@ -67,7 +69,9 @@ export default [
     ],
     plugins: [
       replace(),
-      babel(babelConfig),
+      resolve(),
+      common(),
+      babel(),
     ],
   },
   {
@@ -79,7 +83,9 @@ export default [
     ],
     plugins: [
       replace(),
-      babel(babelConfig),
+      resolve(),
+      common(),
+      babel(),
     ],
   },
   {
@@ -90,7 +96,7 @@ export default [
       replace(),
       resolve(),
       common(),
-      babel(babelConfig),
+      babel(),
     ],
   },
   {
@@ -103,7 +109,7 @@ export default [
       }),
       resolve(),
       common(),
-      babel(babelConfig),
+      babel(),
       uglify({
         output: {
           comments: /^!/,
