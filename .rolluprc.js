@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import babelPlugin from 'rollup-plugin-babel';
-import common from 'rollup-plugin-commonjs';
-import replacePlugin from 'rollup-plugin-replace';
-import resolve from 'rollup-plugin-node-resolve';
+import common from '@rollup/plugin-commonjs';
+import replacePlugin from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
 import { uglify } from 'rollup-plugin-uglify';
 
 import {
