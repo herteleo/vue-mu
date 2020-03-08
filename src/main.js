@@ -1,7 +1,7 @@
 /* global __VERSION__, __SILENT__ */
 
 import autoParse from 'auto-parse';
-import camelCase from 'camelcase';
+import { camelCase } from 'camel-case';
 import Vue from 'vue';
 
 import createNewVue from './utils/createNewVue';
